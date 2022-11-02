@@ -554,15 +554,19 @@ align-items: center;
 `,S1=({messageError:e,setError:t})=>(ne.exports.useEffect(()=>{let n;return n=setTimeout(()=>{t(!1)},3e3),()=>clearTimeout(n)},[e]),R(k1,{children:R("p",{children:e})})),Ip="/react-meal-recipes/assets/icon-heart-black.6925b7ae.png",Lp="/react-meal-recipes/assets/icon-heart-red.489c0d6b.png",C1=({dataCategory:e,dataSearch:t,titleMeal:n,titleMealCategory:r,loading:o,modal:i,error:a,messageError:c,setError:d,favoriteMeals:m,favorites:w,deleteFavorite:y})=>{let v=n||"Meals";const P=({meal:k})=>{const E=w==null?void 0:w.find(O=>O.idMeal===k.idMeal);return he(w1,{children:[R("div",{className:"card__header",children:R("img",{src:k==null?void 0:k.strMealThumb,alt:k==null?void 0:k.strMeal})}),he("div",{className:"card__body",children:[R("p",{children:k==null?void 0:k.strMeal}),(k==null?void 0:k.strCategory)&&he("p",{children:["Category: ",k.strCategory]})]}),he("div",{className:"card__footer",children:[R(_i,{className:`card__btn--favorite ${E?"hide":"show"} `,onClick:()=>m(k),children:!E&&R("img",{src:Ip,alt:"icon-heart-black"})}),R(_i,{className:`card__btn--delete ${E?"show":"hide"} `,onClick:()=>y(k.idMeal),children:R("img",{src:Lp,alt:"icon-heart-red"})}),R(i1,{onClick:()=>i(k.idMeal),children:"More Information"})]})]})};return he(Jo,{children:[!e||t&&R(od,{children:a?R(S1,{messageError:c,setError:d}):o?R("span",{className:"loader"}):he(Jo,{children:[R("h2",{children:v}),he("h3",{className:"results",children:["Results ",t==null?void 0:t.length]}),R("div",{className:"container__cards",children:t==null?void 0:t.map(k=>R(P,{meal:k},`Meal-id-${k.idMeal}`))})]})}),e&&!t&&!a&&R(od,{children:o?R("span",{className:"loader"}):he(Jo,{children:[R("h2",{children:r}),he("h3",{className:"results",children:["Results ",e==null?void 0:e.length]}),R("div",{className:"container__cards",children:e==null?void 0:e.map(k=>R(P,{meal:k},`Meal-id-${k.idMeal}`))})]})})]})},E1=({dataCategory:e,dataSearch:t,titleMeal:n,titleMealCategory:r,loading:o,modal:i,error:a,messageError:c,setError:d,favoriteMeals:m,favorites:w,deleteFavorite:y})=>R("main",{children:R(C1,{dataCategory:e,dataSearch:t,titleMeal:n,titleMealCategory:r,loading:o,modal:i,error:a,messageError:c,setError:d,favoriteMeals:m,favorites:w,deleteFavorite:y})}),{primary:I1,secondary:P1,primaryModal:Zs,primaryModal30:id,tertiary:_1,fourth:L1,white:M1,white05:j1,whiteModal65:R1,black:B1,black55:Zl,black95:$1}=zn,b1=We.div`
   background-color: ${e=>$1};
   position: fixed;
-   top: 0;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   overflow-y: scroll;
-  z-index: 3;
+  z-index: 5;
   display: ${e=>e.isOpen};
 
-   &::-webkit-scrollbar {
+  @media screen and (min-width: 576px) {
+    /*overflow-y: none;*/
+  }
+
+  &::-webkit-scrollbar {
     width: 5px;
     border-radius: 10px;
   }
@@ -573,11 +577,9 @@ align-items: center;
   }
 `,A1=We.article`
   width: 100%;
-  margin: auto;
   background-image: url(${Op});
   background-size: 100% 100%;
   background-repeat: no-repeat;
- 
 
   @media screen and (min-width: 576px) {
     width: 90%;
@@ -712,7 +714,6 @@ align-items: center;
       justify-content: space-around;
       align-items: center;
       background-color: ${e=>Zl};
-      margin-bottom:10px; 
     }
   }
 `,T1=({dataModal:e,closeModal:t,favorites:n,deleteFavorite:r,favoriteMeals:o})=>{if(!e)return;let i=[],a=Array.from(e==null?void 0:e.strMeal).join(" ").slice(0,35);function c(y){for(let v=1;v<=20;v++)y[`strIngredient${v}`]&&i.push(`${y[`strIngredient${v}`]} - ${y[`strMeasure${v}`]}`)}c(e);const d=({ingredient:y,index:v})=>he("li",{children:[v+1," - ",y]}),m=i.map((y,v)=>R(d,{ingredient:y,index:v},v)),w=n==null?void 0:n.find(y=>y.idMeal===e.idMeal);return R(A1,{children:he("div",{className:"modal__card",children:[R("div",{className:"modal__card__title",children:R("h3",{children:a})}),he("div",{className:"modal__card__body",children:[R("h3",{children:"Ingredients: "}),R("div",{className:"modal__card__body--ingredients",children:R("ul",{children:m})}),he("div",{className:"modal__card__body--preparation",children:[R("h3",{children:"Instructions:"}),R("div",{className:"modal__card__body--prepation--instructions",children:R("p",{children:e==null?void 0:e.strInstructions})})]})]}),he("div",{className:"modal__card__footer",children:[R(_i,{className:`card__btn--favorite ${w?"hide":"show"} `,onClick:()=>o(e),children:!w&&R("img",{src:Ip,alt:"icon-heart-black"})}),R(_i,{className:`card__btn--delete ${w?"show":"hide"} `,onClick:()=>r(e==null?void 0:e.idMeal),children:R("img",{src:Lp,alt:"icon-heart-red"})}),R("a",{href:e==null?void 0:e.strYoutube,target:"_blank",children:R(l1,{children:"Watch Video"})}),R(s1,{onClick:t,children:"Close"})]})]})})},z1=({dataModal:e,isOpen:t,closeModal:n,favorites:r,deleteFavorite:o,favoriteMeals:i})=>{if(!e)return;const a=e[0];return R(b1,{isOpen:t?"flex":"none",children:R(T1,{dataModal:a,closeModal:n,favorites:r,deleteFavorite:o,favoriteMeals:i})})},N1=()=>{const[e,t]=ne.exports.useState([]),[n,r]=ne.exports.useState(""),[o,i]=ne.exports.useState(null),[a,c]=ne.exports.useState([]),[d,m]=ne.exports.useState(!1),[w,y]=ne.exports.useState(!1),[v,P]=ne.exports.useState(!1),{openModal:k,closeModal:E,isOpen:O}=By(),{searchId:h,dataModal:p,isActiveModal:g,modal:C}=Fy(k),{getDataSearch:_,titleMeal:$,messageError:N}=My(y,m),{getCategory:I,titleMealCategory:G}=Ry(y),{favorites:H,favoriteMeals:we,deleteFavorite:pe}=jy(E);return ne.exports.useEffect(()=>{(async le=>{const Qe=await _(le);t(Qe),P(!1),i(null)})(n)},[n]),ne.exports.useEffect(()=>{if(!o)return;(async le=>{const Qe=await I(le);c(Qe),P(!1)})(o)},[o]),ne.exports.useEffect(()=>{d&&r("")},[d]),he(Ly,{children:[R(u1,{setSearch:r,setCategory:i,reset:()=>{r(""),i(null)}}),R(p1,{favorites:H,modal:C,toggleFav:v,setToggleFav:P}),R(E1,{dataCategory:a,dataSearch:e,titleMeal:$,titleMealCategory:G,loading:w,modal:C,error:d,messageError:N,setError:m,favoriteMeals:we,favorites:H,deleteFavorite:pe}),R(z1,{dataModal:p,isOpen:O,closeModal:E,favoriteMeals:we,favorites:H,deleteFavorite:pe})]})};function O1(){return R("div",{className:"App",children:R(N1,{})})}ql.createRoot(document.getElementById("root")).render(R(uo.StrictMode,{children:R(O1,{})}));
