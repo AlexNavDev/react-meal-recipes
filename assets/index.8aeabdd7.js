@@ -562,10 +562,6 @@ align-items: center;
   z-index: 5;
   display: ${e=>e.isOpen};
 
-  @media screen and (min-width: 576px) {
-    /*overflow-y: none;*/
-  }
-
   &::-webkit-scrollbar {
     width: 5px;
     border-radius: 10px;
