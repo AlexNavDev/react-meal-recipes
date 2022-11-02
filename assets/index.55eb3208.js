@@ -562,19 +562,20 @@ align-items: center;
   display: ${e=>e.isOpen};
 `,A1=We.article`
   width: 100%;
-  min-height: 700px;
-  margin: auto;
   background-image: url(${Op});
   background-size: 100% 100%;
   background-repeat: no-repeat;
 
+
   @media screen and (min-width: 576px) {
     width: 90%;
+    height: 700px;
+    margin: auto;
   }
 
   @media screen and (min-width: 992px) {
     width: 70%;
-    min-height: 800px;
+    height: 800px;
   }
 
   @media screen and (min-width: 1200px) {
@@ -583,7 +584,7 @@ align-items: center;
   }
 
   .modal__card {
-    width: 90%;
+    width: 90%;    
     margin: auto;
 
     @media screen and (min-width: 576px) {
@@ -609,7 +610,7 @@ align-items: center;
 
       h3 {
         width: 100%;
-        height: 65px;
+        height: 60px;
         text-align: center;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -668,10 +669,10 @@ align-items: center;
       }
 
       .modal__card__body--preparation {
-        height: 350px;
+        height: 330px;
 
         .modal__card__body--prepation--instructions {
-          height: 310px;
+          height: 280px;
           background-color: ${e=>id};
           overflow-y: scroll;
           font-weight: 600;
