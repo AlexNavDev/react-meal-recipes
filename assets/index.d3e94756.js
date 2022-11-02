@@ -574,15 +574,14 @@ align-items: center;
 `,A1=We.article`
   width: 100%;
   min-height: 650px;
+  margin: auto;
   background-image: url(${Op});
   background-size: 100% 100%;
   background-repeat: no-repeat;
-    margin: auto;
 
   @media screen and (min-width: 576px) {
     width: 90%;
     height: 700px;
-    margin: auto;
   }
 
   @media screen and (min-width: 992px) {
