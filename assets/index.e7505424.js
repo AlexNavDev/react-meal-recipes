@@ -573,7 +573,7 @@ align-items: center;
   }
 `,A1=We.article`
   width: 100%;
-  height: 650px;
+  min-height: 100vh;
   background-image: url(${Op});
   background-size: 100% 100%;
   background-repeat: no-repeat;
