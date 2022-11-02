@@ -573,10 +573,11 @@ align-items: center;
   }
 `,A1=We.article`
   width: 100%;
-  min-height: 100vh;
+  min-height: 650px;
   background-image: url(${Op});
   background-size: 100% 100%;
   background-repeat: no-repeat;
+    margin: auto;
 
   @media screen and (min-width: 576px) {
     width: 90%;
