@@ -662,9 +662,6 @@ align-items: center;
     }
 
     .modal__card__body {
-      @media screen and (min-width: 992px) {
-        height: 600px;
-      }
       h3 {
         padding: 5px 10px;
         background-color: ${e=>Zl};
@@ -711,9 +708,10 @@ align-items: center;
         height: 330px;
 
         @media screen and (min-width: 992px) {
-          height: 380px;
-        }
+            height: 380px;            
+          }
 
+        
         .modal__card__body--prepation--instructions {
           height: 280px;
           background-color: ${e=>id};
@@ -722,7 +720,7 @@ align-items: center;
           padding: 15px;
 
           @media screen and (min-width: 992px) {
-            height: 330px;
+            height: 340px;            
           }
 
           &::-webkit-scrollbar {
